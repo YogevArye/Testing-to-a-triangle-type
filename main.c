@@ -1,14 +1,7 @@
 /*
-Implement a function that is given 2 positive integers representing 2 angles of a triangle. If the triangle is right, isosceles, or both, the function should return 1, 2 or 3, respectively. Otherwise it shoud return 0.
+Implementation of a function that is given 2 positive integers representing 2 angles of a triangle. If the triangle is right, isosceles, or both, the function should return 1, 2 or 3, respectively. Otherwise, it shoud return 0.
 
-Keep in mind that the parameter values may be invalid. How would you handle this?
 
-Study:
-What is the difference between the following statements?
-if (x == 3) { ... }
-if (x = 3) { ... }
-What input values are considered to be an error in this exercise?
-What are the conventional ways for error handling in C?*/
 #include <stdio.h>
 
 int ChecikngTriangleType(int oneAngleSize, int twoAngleSize){
