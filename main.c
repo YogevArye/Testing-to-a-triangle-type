@@ -1,19 +1,28 @@
-
-
 #include <stdio.h>
 
-int ChecikngTriangleType(int oneAngleSize, int twoAngleSize){
+int TriangleType(unsigned angle1, unsigned angle2){
   const int rightAngle = 90;
-  if ((oneAngleSize == rightAngle && twoAngleSize == rightAngle-twoAngleSize)||(twoAngleSize == rightAngle && oneAngleSize == rightAngle-oneAngleSize)||(180-oneAngleSize-twoAngleSize ==rightAngle&&oneAngleSize==twoAngleSize)){return 3;}
-  else if (oneAngleSize == twoAngleSize || oneAngleSize == 180-oneAngleSize-twoAngleSize || twoAngleSize == 180-oneAngleSize-twoAngleSize){return 2;}
-  else if(oneAngleSize == rightAngle || twoAngleSize == rightAngle || 180-oneAngleSize-twoAngleSize == rightAngle){ return 1;}
+  const unsigned angle3 = 180 - angle1 - angle2;
+      /*Invalid angles*/                                                                                       
+   if (angle1 + angle2 >= 180 ||angle1 + angle3 >= 180 || angle2 + angle3 >= 180 ){return -1;}
+      /*A right-angled and isosceles triangle*/                                                                                       
+  else if ((angle1 == rightAngle && angle2 == rightAngle-angle2)||(angle2 == rightAngle && angle1 == rightAngle-angle1)||(angle3 ==rightAngle&&angle1==angle2)){return 3;}
+        /*A isosceles triangle*/                                                                                       
+  else if (angle1 == angle2 || angle1 == angle3|| angle2 == angle3){
+      return 2;}
+          /*A right-angled triangle*/                                                                                       
+  else if (angle1 == rightAngle || angle2 == rightAngle || angle3 == rightAngle){ return 1;}
+                                                                                        
+                                                                                          
   else {return 0;}
+      
 }
+
+
 int main()
 {
-    int a=60;
-    int b =60;
-    int c=60;
-    printf("Your triangle type is %d",ChecikngTriangleType(b,c));
+    unsigned a = 60;
+    unsigned b = 60;
+    printf("Your triangle type is %d\n", TriangleType(a, b));
     return 0;
 }
