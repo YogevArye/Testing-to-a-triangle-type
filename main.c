@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int TriangleType (unsigned angle1, unsigned angle2){
-  const int RIGHT_ANGLE = 90;
+  const unsigned RIGHT_ANGLE = 90;
   const unsigned ANGLE_3 = 180 - angle1 - angle2;
       /*Invalid angles*/                                                                                       
    if (angle1 + angle2 >= 180 ||angle1 + ANGLE_3 >= 180 || angle2 + ANGLE_3 >= 180 ){return -1;}
