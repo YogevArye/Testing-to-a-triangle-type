@@ -22,6 +22,6 @@ int main()
 {
     unsigned a = 90;
     unsigned b = 60;
-    printf("Your triangle type is %d\n", TriangleType(a, b));
+    printf("Your triangle type is %d\n", triangle_type(a, b));
     return 0;
 }
