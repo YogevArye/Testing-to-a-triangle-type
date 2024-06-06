@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int TriangleType(unsigned angle1, unsigned angle2){
+int triangle_type(unsigned angle1, unsigned angle2){
   const int right_angle = 90;
   const unsigned angle3 = 180 - angle1 - angle2;
       /*Invalid angles*/                                                                                       
